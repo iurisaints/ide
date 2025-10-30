@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDE - Sua Escola B2B</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-principal">
+
+    <header>
+        <nav id="navbar-principal" class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#home"><img src="./assets/logo.png" alt="LOGO IDE" class="logo-cab"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-navegacao" aria-controls="menu-navegacao" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu-navegacao">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cursos">Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#quem-somos">Quem Somos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home">
+            <div class="container">
+                <h1>HOME</h1>
+            </div>
+        </section>
+
+        <section id="cursos">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-5" id="menu-cursos">
+                        <h2>Nossa Carta de Cursos</h2>
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            
+                            <a class="nav-link active" id="v-pills-curso1-tab" data-bs-toggle="pill" href="#v-pills-curso1" role="tab" aria-controls="v-pills-curso1" aria-selected="true">
+                                Letramento Digital Corporativo
+                            </a>
+                            <a class="nav-link" id="v-pills-curso2-tab" data-bs-toggle="pill" href="#v-pills-curso2" role="tab" aria-controls="v-pills-curso2" aria-selected="false">
+                                Frontend para Não-Técnicos
+                            </a>
+                            <a class="nav-link" id="v-pills-curso3-tab" data-bs-toggle="pill" href="#v-pills-curso3" role="tab" aria-controls="v-pills-curso3" aria-selected="false">
+                                Formação Backend Integral
+                            </a>
+                            <a class="nav-link" id="v-pills-curso4-tab" data-bs-toggle="pill" href="#v-pills-curso4" role="tab" aria-controls="v-pills-curso4" aria-selected="false">
+                                Formação Frontend Moderna
+                            </a>
+                            <a class="nav-link" id="v-pills-curso5-tab" data-bs-toggle="pill" href="#v-pills-curso5" role="tab" aria-controls="v-pills-curso5" aria-selected="false">
+                                Bootcamp Fullstack
+                            </a>
+                            <a class="nav-link" id="v-pills-curso6-tab" data-bs-toggle="pill" href="#v-pills-curso6" role="tab" aria-controls="v-pills-curso6" aria-selected="false">
+                                Diagnóstico e Treinamento Cirúrgico
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-7" id="detalhes-cursos">
+                        <div class="tab-content" id="v-pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="v-pills-curso1" role="tabpanel" aria-labelledby="v-pills-curso1-tab">
+                                <h3>Letramento Digital Corporativo</h3>
+                                <span class="badge">Público-Alvo: Equipes administrativas, operacionais e de recepção.</span>
+                                
+                                <h5>O Pitch</h5>
+                                <p>Aumente a produtividade e a segurança de toda a sua empresa. Capacite sua equipe para usar as ferramentas de escritório (e-mail, planilhas, nuvem) de forma eficiente e segura.</p>
+                                
+                                <h5>Tópicos Principais</h5>
+                                <ul>
+                                    <li>Boas Práticas de E-mail (Segurança, Phishing)</li>
+                                    <li>Organização de Arquivos na Nuvem (Google Drive / OneDrive)</li>
+                                    <li>Produtividade com Google Workspace / Microsoft 365</li>
+                                    <li>Segurança da Informação Básica (Senhas, 2FA)</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-curso2" role="tabpanel" aria-labelledby="v-pills-curso2-tab">
+                                <h3>Frontend para Não-Técnicos (HTML/CSS)</h3>
+                                <span class="badge">Público-Alvo: Times de Design, Marketing e Product Owners.</span>
+                                
+                                <h5>O Pitch</h5>
+                                <p>Faça seu time de design e marketing falar a mesma língua dos desenvolvedores. Dê autonomia para sua equipe fazer pequenas alterações em sites ou e-mail marketing sem depender 100% de TI.</p>
+                                
+                                <h5>Tópicos Principais</h5>
+                                <ul>
+                                    <li>O que são HTML, CSS e JavaScript?</li>
+                                    <li>Estrutura básica de HTML (Tags principais)</li>
+                                    <li>Estilização básica com CSS (Cores, Fontes, Margens)</li>
+                                    <li>Como "Inspecionar Elemento" no navegador</li>
+                                    <li>Conceito de Responsividade (Mobile vs. Desktop)</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-curso3" role="tabpanel" aria-labelledby="v-pills-curso3-tab">
+                                <h3>Formação Backend Integral (APIs e Bancos)</h3>
+                                <span class="badge">Público-Alvo: Desenvolvedores Júnior ou equipes migrando de tecnologia.</span>
+                                
+                                <h5>O Pitch</h5>
+                                <p>Capacite sua equipe para construir a 'inteligência' por trás das aplicações. Da criação da API RESTful até a integração segura com o banco de dados.</p>
+                                
+                                <h5>Tópicos Principais</h5>
+                                <ul>
+                                    <li>Fundamentos de API REST (Verbos HTTP, JSON)</li>
+                                    <li>Criação de Servidor (ex: Node.js e Express)</li>
+                                    <li>Modelagem de Bancos de Dados (SQL ou NoSQL)</li>
+                                    <li>Comandos CRUD (Create, Read, Update, Delete)</li>
+                                    <li>Autenticação e Segurança (JWT)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="v-pills-curso4" role="tabpanel" aria-labelledby="v-pills-curso4-tab">
+                                <h3>Formação Frontend Moderna</h3>
+                                <span class="badge">Público-Alvo: Desenvolvedores que precisam construir interfaces web modernas.</span>
+                                
+                                <h5>O Pitch</h5>
+                                <p>Modernize suas aplicações web. Treine sua equipe para construir interfaces rápidas, interativas e reutilizáveis com React.js, a tecnologia mais demandada do mercado.</p>
+                                
+                                <h5>Tópicos Principais</h5>
+                                <ul>
+                                    <li>Nivelamento: JavaScript Moderno (ES6+)</li>
+                                    <li>Fundamentos do React: Componentes, Props e State</li>
+                                    <li>React Hooks (useState, useEffect)</li>
+                                    <li>Consumo de APIs (Integração com Backend)</li>
+                                    <li>Gerenciamento de Estado (Context API / Redux Toolkit)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="v-pills-curso5" role="tabpanel" aria-labelledby="v-pills-curso5-tab">
+                                <h3>Bootcamp Fullstack</h3>
+                                <span class="badge">Público-Alvo: Equipes de startups, programas de trainee ou times multifuncionais.</span>
+                                
+                                <h5>O Pitch</h5>
+                                <p>Formação completa de ponta a ponta. Sua equipe pronta para construir uma aplicação inteira, do clique do usuário até o salvamento no banco de dados, unindo React e Node.</p>
+                                
+                                <h5>Tópicos Principais</h5>
+                                <ul>
+                                    <li>Fusão dos módulos de Backend e Frontend Moderno</li>
+                                    <li>Desenvolvimento de Projeto Prático Integrador</li>
+                                    <li>Boas Práticas de Integração (Frontend + Backend)</li>
+                                    <li>Conceitos de Deploy (Colocando a aplicação no ar)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="v-pills-curso6" role="tabpanel" aria-labelledby="v-pills-curso6-tab">
+                                <h3>Diagnóstico e Treinamento Cirúrgico</h3>
+                                <span class="badge">Público-Alvo: Equipes de desenvolvimento maduras com gargalos específicos.</span>
+                                
+                                <h5>O Pitch</h5>
+                                <p>Não compre um curso de prateleira. Compre a solução exata para o seu gargalo. Eu faço um diagnóstico da sua equipe e monto um treinamento 100% focado em resolver *o seu* problema.</p>
+                                
+                                <h5>Como Funciona</h5>
+                                <ul>
+                                    <li>Fase 1: Diagnóstico (Entrevistas e análise de código)</li>
+                                    <li>Fase 2: Proposta Customizada (Plano de treinamento micro-focado)</li>
+                                    <li>Fase 3: Execução (O treinamento prático e focado)</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quem-somos">
+            <div class="container">
+                <h1>QUEM SOMOS</h1>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* --- Configurações Globais (A "Adega") --- */
+        :root {
+            --cor-fundo: #1c2541; /* O azul petróleo escuro da sua paleta */
+            --cor-destaque: #00f0b5; /* O ciano vibrante */
+            --cor-texto: #F8F9FA;    /* Texto principal (branco-gelo) */
+            --cor-texto-secundario: #CED4DA; /* Texto mais suave */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--cor-texto);
+        }
+
+        section {
+            min-height: 100vh;
+            padding-top: 120px; /* Espaço para o navbar fixo */
+            padding-bottom: 60px;
+        }
+
+        .logo-cab{
+            width: 100px;
+            height: 100px;
+        }
+
+        /* --- Header / Navbar --- */
+        .navbar {
+            background-color: rgba(28, 37, 65, 0.85); /* Fundo com transparência */
+            backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            color: var(--cor-destaque) !important;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--cor-texto-secundario);
+            font-weight: 500;
+            margin-left: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--cor-destaque);
+        }
+
+        /* --- Seção "Carta de Cursos" --- */
+        #menu-cursos {
+            position: sticky;
+            top: 100px; /* Abaixo do navbar */
+            align-self: flex-start; /* Alinha o menu no topo */
+        }
+
+        #menu-cursos h2 {
+            font-weight: 700;
+            color: var(--cor-texto);
+            border-bottom: 2px solid var(--cor-destaque);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo da "Carta de Vinhos" (nav-pills) */
+        .nav-pills .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: left;
+            color: var(--cor-texto-secundario);
+            border-radius: 0;
+            padding: 15px 10px;
+            border-left: 4px solid transparent; /* Borda de seleção */
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link:hover {
+            color: var(--cor-destaque);
+            transform: translateX(5px);
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: transparent;
+            color: var(--cor-destaque);
+            font-weight: 700;
+            border-left: 4px solid var(--cor-destaque);
+        }
+
+        /* Detalhes do Curso (Tab-Content) */
+        .tab-content {
+            padding-left: 20px;
+        }
+        
+        .tab-pane {
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-pane h3 {
+            font-weight: 700;
+            color: var(--cor-destaque);
+            margin-bottom: 20px;
+        }
+        
+        .tab-pane .badge {
+            background-color: var(--cor-destaque);
+            color: var(--cor-fundo);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .tab-pane h5 {
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-top: 30px;
+        }
+        
+        .tab-pane p, .tab-pane li {
+            font-weight: 300;
+            color: var(--cor-texto-secundario);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .tab-pane ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tab-pane ul li::before {
+            content: '✓'; /* Ícone de check */
+            color: var(--cor-destaque);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        /* Animação de Fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Placeholder para outras seções */
+        #home, #quem-somos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #home h1, #quem-somos h1 {
+            font-size: 4rem;
+            color: var(--cor-texto-secundario);
+            opacity: 0.2;
+        }
