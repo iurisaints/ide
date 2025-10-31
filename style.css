@@ -1,6 +1,5 @@
-
 :root {
-    --cor-fundo: #1c2541; /* O azul petróleo  */
+    --cor-fundo: #1c2541; /* O azul petróleo escuro da sua paleta */
     --cor-destaque: #00f0b5; /* O ciano vibrante */
     --cor-texto: #F8F9FA;    /* Texto principal (branco-gelo) */
     --cor-texto-secundario: #CED4DA; /* Texto mais suave */
@@ -278,16 +277,104 @@ section:not(#home) {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ! MUDANÇA: Placeholder para outras seções (agora só #quem-somos) */
+/* ========================================
+ * ! ESTILOS DA NOVA SEÇÃO QUEM SOMOS
+ * ========================================
+*/
+
+/* Remove o estilo placeholder antigo */
 #quem-somos {
+    display: block; /* Restaura o padrão */
+    align-items: initial;
+    justify-content: initial;
+}
+
+#quem-somos .profile-image {
+    border: 5px solid var(--cor-destaque);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#quem-somos .quem-somos-title {
+    font-weight: 700;
+    color: var(--cor-texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#quem-somos h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#quem-somos h3 .text-highlight {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--cor-destaque);
+}
+
+#quem-somos .lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cor-texto-secundario) !important; /* !important para sobrescrever o .text-secondary do Bootstrap */
+    margin-bottom: 25px;
+}
+
+#quem-somos .quem-somos-pitch {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+#quem-somos h4 {
+    font-weight: 700;
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* Lista de Credenciais */
+.credentials-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.credentials-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
 }
-#quem-somos h1 {
-    font-size: 4rem;
+
+.credentials-list .list-icon {
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+    background-color: rgba(0, 240, 181, 0.1);
+    border-radius: 50%;
+    min-width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.credentials-list li div {
+    display: flex;
+    flex-direction: column;
+}
+
+.credentials-list li strong {
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+.credentials-list li small {
+    font-weight: 300;
     color: var(--cor-texto-secundario);
-    opacity: 0.2;
 }
 
 /* Sua media query original para os cursos (mantida) */
