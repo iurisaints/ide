@@ -1,159 +1,305 @@
 /* --- Configurações Globais (A "Adega") --- */
-        :root {
-            --cor-fundo: #1c2541; /* O azul petróleo escuro da sua paleta */
-            --cor-destaque: #00f0b5; /* O ciano vibrante */
-            --cor-texto: #F8F9FA;    /* Texto principal (branco-gelo) */
-            --cor-texto-secundario: #CED4DA; /* Texto mais suave */
-        }
+:root {
+    --cor-fundo: #1c2541; /* O azul petróleo escuro da sua paleta */
+    --cor-destaque: #00f0b5; /* O ciano vibrante */
+    --cor-texto: #F8F9FA;    /* Texto principal (branco-gelo) */
+    --cor-texto-secundario: #CED4DA; /* Texto mais suave */
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            background-color: var(--cor-fundo);
-            font-family: 'Montserrat', sans-serif;
-            color: var(--cor-texto);
-        }
+body {
+    background-color: var(--cor-fundo);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-texto);
+}
 
-        section {
-            min-height: 100vh;
-            padding-top: 120px; /* Espaço para o navbar fixo */
-            padding-bottom: 60px;
-        }
+/* * ! MUDANÇA: Aplicamos o padding-top em todas, exceto na #home, 
+ * que tem seu próprio layout de altura total.
+*/
+section {
+    padding-bottom: 60px;
+}
+section:not(#home) {
+    min-height: 100vh;
+    padding-top: 120px; /* Espaço para o navbar fixo */
+}
 
-        .logo-cab{
-            width: 100px;
-            height: 100px;
-        }
+/* Sua classe de logo */
+.logo-cab{
+    /* 100px é muito grande para o navbar, sugestão de 60px */
+    max-height: 60px; 
+    width: auto; /* Mantém a proporção */
+}
 
-        /* --- Header / Navbar --- */
-        .navbar {
-            background-color: rgba(28, 37, 65, 0.85); /* Fundo com transparência */
-            backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-            transition: background-color 0.3s ease;
-        }
+/* --- Header / Navbar --- */
+.navbar {
+    background-color: rgba(28, 37, 65, 0.85); /* Fundo com transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    transition: background-color 0.3s ease;
+    min-height: 80px; /* Garante altura mínima para a logo */
+    align-items: center;
+}
 
-        .navbar-brand {
-            font-family: 'Roboto Mono', monospace;
-            font-weight: 700;
-            color: var(--cor-destaque) !important;
-            font-size: 1.5rem;
-        }
+.navbar-brand {
+    /* Removido o estilo de texto, já que agora é uma imagem */
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
-        .navbar-nav .nav-link {
-            color: var(--cor-texto-secundario);
-            font-weight: 500;
-            margin-left: 15px;
-            transition: color 0.3s ease;
-        }
+.navbar-nav .nav-link {
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--cor-destaque);
-        }
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--cor-destaque);
+}
 
-        /* --- Seção "Carta de Cursos" --- */
-        #menu-cursos {
-            position: sticky;
-            top: 100px; /* Abaixo do navbar */
-            align-self: flex-start; /* Alinha o menu no topo */
-        }
 
-        #menu-cursos h2 {
-            font-weight: 700;
-            color: var(--cor-texto);
-            border-bottom: 2px solid var(--cor-destaque);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+/* * ========================================
+ * ! NOVO: SEÇÃO HOME (Hero com Fade)
+ * ========================================
+*/
+#home {
+    min-height: 100vh;
+    width: 100%;
+}
 
-        /* Estilo da "Carta de Vinhos" (nav-pills) */
-        .nav-pills .nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-align: left;
-            color: var(--cor-texto-secundario);
-            border-radius: 0;
-            padding: 15px 10px;
-            border-left: 4px solid transparent; /* Borda de seleção */
-            transition: all 0.3s ease;
-        }
+/* Contêiner da Imagem (Esquerda) */
+#home-image-container {
+    min-height: 50vh; /* Altura mínima no mobile */
+    /* ! ! ! SUBSTITUA ESTA URL PELA SUA FOTO ! ! ! */
+    background-image: url('./assets/iuri.jpg'); 
+    background-size: cover;
+    background-position: center left;
+    position: relative;
+}
 
-        .nav-pills .nav-link:hover {
-            color: var(--cor-destaque);
-            transform: translateX(5px);
-        }
+/* O Efeito "Fade" */
+#home-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    /* Fade Vertical (Padrão Mobile) */
+    background: linear-gradient(to bottom, 
+        rgba(28, 37, 65, 0) 60%,  /* Transparente no topo */
+        var(--cor-fundo) 100%    /* Cor de fundo embaixo */
+    );
+}
 
-        .nav-pills .nav-link.active {
-            background-color: transparent;
-            color: var(--cor-destaque);
-            font-weight: 700;
-            border-left: 4px solid var(--cor-destaque);
-        }
+/* Contêiner do Texto (Direita) */
+#home-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center; /* Centralizado no mobile */
+}
 
-        /* Detalhes do Curso (Tab-Content) */
-        .tab-content {
-            padding-left: 20px;
-        }
-        
-        .tab-pane {
-            animation: fadeIn 0.5s;
-        }
+#home-text-container h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--cor-texto);
+}
 
-        .tab-pane h3 {
-            font-weight: 700;
-            color: var(--cor-destaque);
-            margin-bottom: 20px;
-        }
-        
-        .tab-pane .badge {
-            background-color: var(--cor-destaque);
-            color: var(--cor-fundo);
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
+#home-text-container h1 span {
+    color: var(--cor-destaque); /* Destaque no texto */
+}
 
-        .tab-pane h5 {
-            font-weight: 700;
-            color: var(--cor-texto);
-            margin-top: 30px;
-        }
-        
-        .tab-pane p, .tab-pane li {
-            font-weight: 300;
-            color: var(--cor-texto-secundario);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
+#home-text-container .lead {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--cor-texto-secundario);
+    max-width: 600px;
+    margin: 20px 0 30px;
+}
 
-        .tab-pane ul {
-            list-style: none;
-            padding-left: 0;
-        }
+/* Botão de Destaque Customizado */
+.btn-custom-highlight {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 50px; /* Arredondado */
+    transition: all 0.3s ease;
+}
+.btn-custom-highlight:hover {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 240, 181, 0.1);
+}
 
-        .tab-pane ul li::before {
-            content: '✓'; /* Ícone de check */
-            color: var(--cor-destaque);
-            font-weight: 700;
-            margin-right: 10px;
-        }
+/* * --- AJUSTES DESKTOP (Telas 'lg' e maiores) ---
+*/
+@media (min-width: 992px) {
+    #home {
+        display: flex;
+    }
+    
+    /* Coluna da Imagem (40%) */
+    #home-image-container {
+        flex-basis: 40%;
+        min-height: 100vh;
+    }
 
-        /* Animação de Fade-in */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* MUDANÇA DO FADE: de Vertical para Horizontal */
+    #home-image-container::after {
+        width: 40%;  /* Largura do fade */
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(to right, 
+            rgba(28, 37, 65, 0) 0%,   /* Transparente na esquerda */
+            var(--cor-fundo) 95%     /* Cor de fundo na direita */
+        );
+    }
+    
+    /* Coluna do Texto (60%) */
+    #home-text-container {
+        flex-basis: 60%;
+        min-height: 100vh;
+        padding: 4rem;
+        text-align: left; /* Alinhado à esquerda no desktop */
+    }
+    
+    #home-text-container h1 {
+        font-size: 4.5rem; /* Fonte maior */
+    }
+}
+/* ========================================
+ * FIM DA SEÇÃO HOME
+ * ========================================
+*/
 
-        /* Placeholder para outras seções */
-        #home, #quem-somos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #home h1, #quem-somos h1 {
-            font-size: 4rem;
-            color: var(--cor-texto-secundario);
-            opacity: 0.2;
-        }
+
+/* --- Seção "Carta de Cursos" --- */
+#menu-cursos {
+    position: sticky;
+    top: 100px; /* Abaixo do navbar */
+    align-self: flex-start; /* Alinha o menu no topo */
+}
+
+#menu-cursos h2 {
+    font-weight: 700;
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo da "Carta de Vinhos" (nav-pills) */
+.nav-pills .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--cor-texto-secundario);
+    border-radius: 0;
+    padding: 15px 10px;
+    border-left: 4px solid transparent; /* Borda de seleção */
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+    color: var(--cor-destaque);
+    transform: translateX(5px);
+}
+
+.nav-pills .nav-link.active {
+    background-color: transparent;
+    color: var(--cor-destaque);
+    font-weight: 700;
+    border-left: 4px solid var(--cor-destaque);
+}
+
+/* Detalhes do Curso (Tab-Content) */
+.tab-content {
+    padding-left: 20px;
+}
+
+.tab-pane {
+    animation: fadeIn 0.5s;
+}
+
+.tab-pane h3 {
+    font-weight: 700;
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+}
+
+.tab-pane .badge {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.tab-pane h5 {
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin-top: 30px;
+}
+
+.tab-pane p, .tab-pane li {
+    font-weight: 300;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.tab-pane ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tab-pane ul li::before {
+    content: '✓'; /* Ícone de check */
+    color: var(--cor-destaque);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ! MUDANÇA: Placeholder para outras seções (agora só #quem-somos) */
+#quem-somos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#quem-somos h1 {
+    font-size: 4rem;
+    color: var(--cor-texto-secundario);
+    opacity: 0.2;
+}
+
+/* Sua media query original para os cursos (mantida) */
+@media (max-width: 767.98px) { 
+    #menu-cursos {
+        position: static; /* Desativa o "sticky" */
+        top: auto;
+        align-self: auto;
+        margin-bottom: 30px; /* Adiciona um espaço entre o menu e o conteúdo */
+    }
+
+    #detalhes-cursos .tab-content { /* Regra corrigida */
+        padding-left: 0; /* Remove o padding extra no mobile */
+    }
+}
